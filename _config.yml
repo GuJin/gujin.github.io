@@ -6,23 +6,23 @@ gems:
 # Site settings
 title: "GuJin"
 description: > # this means to ignore newlines until "email:"
-   加油啊 少年郎
+   a programmer
 
 email: a-mail@mail.mail
 #blog logo
-logo: "/assets/images/df_logo.jpg"
-float_logo: true # true, false (default)
+logo: "/assets/images/logo.jpg"
+float_logo: false # true, false (default)
 
 # blog cover
-cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+cover: "/assets/images/cover.jpg"
 
-name: 'Dirk Fabisch'
-author: 'Dirk Fabisch'
-author_image: "/assets/images/author.jpg"
+name: 'Gu Jin'
+author: 'Gu Jin'
+author_image: "/assets/images/logo.jpg"
 
 paginate:	5
 
-url: "http://myblog.***.***" # the base hostname & protocol for your site
+url: "http://gujin.tech" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
 twitter_handle: '@dirkfabisch'
@@ -30,34 +30,14 @@ twitter_handle: '@dirkfabisch'
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
 
-#google_analytics: UA-XXXXX-X
+google_analytics: UA-91077451-1
 
 # social icons and sharing options
+# where the icons from : http://fontawesome.io/icons/
 social:
-  - icon:	twitter
-    url:	https://twitter.com/dirkfabisch
-    desc: Follow me on twitter
-    share_url: http://twitter.com/share
-    share_title: ?text=
-    share_link: "&amp;url="
-
-#  - icon:	facebook
-#    url:	https://facebook.com/???
-#    desc: Connect with me facebook
-#    share_url: https://www.facebook.com/sharer.php
-#    share_title: ?t=
-#    share_link: "&amp;u="
-
   - icon:	github
-    url:	https://github.com/dirkfabisch
-    desc:	Fork me on github
+    url:	https://github.com/GuJin
+    desc:	Follow me on github
     share_url:
     share_title:
     share_link:
-
-#  - icon:	google-plus
-#    url:	https://google.com/???
-#    desc:	Add me on google+
-#    share_url:
-#    share_title:
-#    share_link:
