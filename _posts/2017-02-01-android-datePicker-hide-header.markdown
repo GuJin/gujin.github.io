@@ -1,19 +1,18 @@
 ---
 layout: post
 title:  "android DatePicker 隐藏头部"
-date:   2014-08-29 14:34:25
-categories: android 
+date:   2017-02-01 14:34:25
+categories: android tech
 tags: android
 image: /assets/images/background_image.jpg
 ---
-
 ### Hide header of DatePicker in calendar mode
 android5.0及以上的版本中，DatePicker在calendar的模式下，自带了一个快速切换年份和日期的头部：
 ![带头部的DatePicker](http://upload-images.jianshu.io/upload_images/1978808-8fa89948b9ecd231.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 隐藏这个头部的原理就是找到相应的View并设置Visibility为Gone.
 在DatePicker源码中，如果mode使用的是Calendar则会调用createCalendarUIDelegate方法。
-```java
+{% highlight java %}
 switch (mode) {
     case MODE_CALENDAR:
         mDelegate = createCalendarUIDelegate(context, attrs, defStyleAttr, defStyleRes);
@@ -23,23 +22,25 @@ switch (mode) {
         mDelegate = createSpinnerUIDelegate(context, attrs, defStyleAttr, defStyleRes);
         break;
 }
-```
+{% endhighlight %}
 
 createCalendarUIDelegate则会返回一个DatePickerSpinnerDelegate
-```java
+{% highlight java %}
 private DatePickerDelegate createCalendarUIDelegate(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
     return new DatePickerCalendarDelegate(this, context, attrs, defStyleAttr, defStyleRes);
 }
-```
+{% endhighlight %}
+
 其中DatePickerCalendarDelegate使用的布局文件为R.layout.date_picker_material
-```java
+{% highlight java %}
 final int layoutResourceId = a.getResourceId(R.styleable.DatePicker_internalLayout, R.layout.date_picker_material);
 // Set up and attach container.
 mContainer = (ViewGroup) inflater.inflate(layoutResourceId, mDelegator, false);
 mDelegator.addView(mContainer);
-```
-R.layout.date_picker_material的内容为
-```xml
+{% endhighlight %}
+
+R.layout.date_picker_material的内容为：
+{% highlight xml %}
 <LinearLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
@@ -55,9 +56,10 @@ R.layout.date_picker_material的内容为
         android:layout_height="0dp"        
         android:layout_weight="1" />
 </LinearLayout>
-```
+{% endhighlight %}
+
 第一个include的布局就是头部了，接下来要做的就是找到这个View然后隐藏掉。
-```java
+{% highlight java %}
 ViewGroup rootView = (ViewGroup) datePicker.getChildAt(0);
 if (rootView == null) {
     return;
@@ -67,14 +69,20 @@ if (headerView == null) {
     return;
 }
 headerView.setVisibility(View.GONE);
+{% endhighlight %}
 
-```
 为了保证隐藏掉的View就是想要隐藏的头部，可以加上id的判断。
-1. 5.0中，头部根布局的id为day_picker_selector_layout
+{% highlight bash %}
+1. 5.0中头部根布局的id为day_picker_selector_layout
 2. 6.0及以上，头部根布局的id为date_picker_header
+{% endhighlight %}
 
+<ol>
+  <li>5.0中头部根布局的id为day_picker_selector_layout</li>
+  <li>6.0及以上，头部根布局的id为date_picker_header</li>
+</ol>
 设置为gone之后还要动态的调整一下布局，所以最后的方法为：
-```java
+{% highlight java %}
 private void hideDatePickerHeader(DatePicker datePicker) {
     ViewGroup rootView = (ViewGroup) datePicker.getChildAt(0);
     if (rootView == null) {
@@ -110,7 +118,7 @@ private void hideDatePickerHeader(DatePicker datePicker) {
         headerView.setVisibility(View.GONE);    
     }
 }
-```
-最终效果：
+{% endhighlight %}
 
+最终效果：
 ![隐藏头部的DatePicker](http://upload-images.jianshu.io/upload_images/1978808-e689027c4e53d3f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
