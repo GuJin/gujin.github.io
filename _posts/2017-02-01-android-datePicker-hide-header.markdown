@@ -72,15 +72,10 @@ headerView.setVisibility(View.GONE);
 {% endhighlight %}
 
 为了保证隐藏掉的View就是想要隐藏的头部，可以加上id的判断。
-{% highlight bash %}
+
 1. 5.0中头部根布局的id为day_picker_selector_layout
 2. 6.0及以上，头部根布局的id为date_picker_header
-{% endhighlight %}
 
-<ol>
-  <li>5.0中头部根布局的id为day_picker_selector_layout</li>
-  <li>6.0及以上，头部根布局的id为date_picker_header</li>
-</ol>
 设置为gone之后还要动态的调整一下布局，所以最后的方法为：
 {% highlight java %}
 private void hideDatePickerHeader(DatePicker datePicker) {
