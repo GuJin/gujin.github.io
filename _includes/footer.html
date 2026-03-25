@@ -1,18 +1,19 @@
-<!-- footer start -->
-
 <footer class="site-footer">
-  <nav class="site-footer-links" aria-label="Footer">
-    <a href="{{ "/tools/" | prepend: site.baseurl }}">Tools</a>
-    <a href="{{ "/diff/" | prepend: site.baseurl }}">Gujin Diff</a>
-    <a href="{{ "/notes/" | prepend: site.baseurl }}">Notes</a>
-    <a href="{{ "/about/" | prepend: site.baseurl }}">About</a>
-    <a href="{{ "/privacy/" | prepend: site.baseurl }}">Privacy</a>
-    <a href="https://github.com/GuJin">GitHub</a>
-  </nav>
-    <div class="inner">
-         <section class="copyright">All content copyright <a href="mailto:{{ site.email}}">{{ site.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.</section>
-         <section class="poweredby">Built with <a href="https://jekyllrb.com">Jekyll</a></section>
+  <div class="site-footer__inner">
+    <div>
+      <p class="site-footer__title">GuJin</p>
+      <p class="site-footer__copy">A small static site for practical tools, image comparison workflows, and archived notes.</p>
     </div>
+    <nav class="site-footer__nav" aria-label="Footer">
+      <a href="{{ "/diff/" | prepend: site.baseurl }}">Image Compare</a>
+      <a href="{{ "/tools/" | prepend: site.baseurl }}">Tools</a>
+      <a href="{{ "/notes/" | prepend: site.baseurl }}">Notes</a>
+      <a href="https://diff.gujin.tech/">Open Tool</a>
+      <a href="https://github.com/GuJin">GitHub</a>
+    </nav>
+  </div>
+  <div class="site-footer__meta">
+    <span>&copy; {{ site.time | date: "%Y" }} {{ site.name }}</span>
+    <span>Built with Jekyll</span>
+  </div>
 </footer>
-
-<!-- footer end -->

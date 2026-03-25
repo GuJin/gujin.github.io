@@ -1,27 +1,27 @@
 ---
 layout: page
 title: About
+heading: About this site
 permalink: /about/
-description: Learn more about GuJin, the focus of the site, and why the work centers on small privacy-friendly tools.
-author: Gu Jin
+description: GuJin builds small web tools and keeps a lightweight archive of practical notes.
+kicker: About
 ---
 
-Gujin is a small personal site for practical software work.
+GuJin is a small personal site for practical software work.
 
-The current focus is a collection of focused web tools that solve one problem well, stay easy to reach, and respect privacy. The first public tool in that direction is [Gujin Diff](https://diff.gujin.tech/), a browser-based image comparison workflow for screenshots and design review.
+The current focus is not a large product suite. It is a small set of public pages that make one workflow easy to find and easy to use: image comparison for screenshots and visual review.
 
-This root site has a different job from the tool itself:
+This root domain does three things:
 
-- explain what the tools are for
-- provide crawlable landing pages and documentation
-- keep older notes and experiments available
-- give each tool a clear, stable home
+- explain what the tool is for
+- keep support pages like privacy and notes in one place
+- give the runtime tool at `diff.gujin.tech` a clean discovery layer
 
-Outside of public tools, the site also keeps a small archive of technical notes and older experiments. The writing is lighter than a traditional blog, but it stays useful as background for the projects linked here.
+If the site grows, it will still stay in that shape: small, focused, and useful before it tries to be broad.
 
 Useful links:
 
-- [Open Gujin Diff](https://diff.gujin.tech/)
-- [Browse tools](/tools/)
-- [Read notes](/notes/)
-- [View the GitHub profile](https://github.com/GuJin)
+- [Open the image compare tool](https://diff.gujin.tech/)
+- [Browse tools]({{ "/tools/" | prepend: site.baseurl }})
+- [Read archived notes]({{ "/notes/" | prepend: site.baseurl }})
+- [GitHub profile](https://github.com/GuJin)

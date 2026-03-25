@@ -1,48 +1,52 @@
 ---
 layout: page
-title: Gujin Diff
+title: Image Compare Features and Workflow
+heading: Image compare for screenshots, mockups, and visual review
 permalink: /diff/
-description: Gujin Diff is a local image compare tool for screenshots, design review, and visual diff checks in the browser.
-author: Gu Jin
+description: Use the image compare tool at diff.gujin.tech to compare screenshots locally, inspect visual differences, align images, and export what you see.
+kicker: Image Compare
+schema_type: SoftwareApplication
 ---
 
-Gujin Diff is a local-first image compare tool for screenshots, design references, and visual checks.
+<p><a class="button" href="https://diff.gujin.tech/">Open Image Compare</a> <a class="button secondary" href="{{ "/privacy/" | prepend: site.baseurl }}">Read privacy notes</a></p>
 
-It is built for workflows where you want to compare two images quickly, inspect differences clearly, and keep the files on your own device.
+## What the tool is for
 
-<p><a class="button" href="https://diff.gujin.tech/">Open Gujin Diff</a> <a class="button secondary" href="{{ "/privacy/" | prepend: site.baseurl }}">Read privacy notes</a></p>
+This page supports the image compare workflow hosted at `diff.gujin.tech`.
 
-## What it does
+The runtime tool is meant for screenshot comparison, design review, and quick visual diff checks where you want a simple browser-based workflow instead of a heavier local setup.
 
-- Compare two images side by side
-- Switch between overlay and diff views
-- Adjust alignment manually for more accurate checks
-- Zoom and pan around the comparison
-- Export the current view
+## What you can do
+
+- compare two images side by side
+- switch between overlay and diff views
+- nudge alignment when screenshots do not line up exactly
+- zoom and pan around the active comparison
+- export the current comparison view
 
 ## Good fits
 
-- Checking design mocks against implementation screenshots
-- Spotting UI regressions during review
-- Comparing different revisions of the same visual asset
-- Running a quick browser-based image diff without setting up local tooling
+- comparing implementation screenshots against design references
+- checking visual regressions during product review
+- inspecting before and after image revisions
+- running a quick image compare session without sending files elsewhere
 
-## Why it lives on a subdomain
+## Why this page exists
 
-`gujin.tech` works as the discovery layer: documentation, links, notes, and landing pages.
+The tool itself lives on `diff.gujin.tech` because the short URL is easier to open and share.
 
-`diff.gujin.tech` is the runtime tool. Separating the two keeps the tool URL short while letting the root site carry more crawlable supporting content.
+This root-domain page exists so search engines and human readers can understand what the tool does before opening it.
 
 ## FAQ
 
-### Does Gujin Diff upload my images?
+### Does the image compare tool upload my files?
 
-The tool is designed to process images in the browser. See the [privacy page](/privacy/) for the root-site explanation and tool-specific notes.
+The intended workflow is local-only processing in the browser. See the [privacy page]({{ "/privacy/" | prepend: site.baseurl }}) for the root-site explanation.
 
 ### Is it free?
 
-Yes. Gujin Diff is currently public and free to use.
+Yes. The current public version is free to open and use.
 
-### What images is it for?
+### What kind of images is it for?
 
-The main target is screenshots, UI captures, design references, and similar visual assets where side-by-side or diff inspection is useful.
+The main use cases are screenshots, UI captures, design handoff images, and similar visuals where comparing differences is more important than editing.

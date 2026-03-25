@@ -1,29 +1,20 @@
 ---
 layout: page
 title: Notes
+heading: Archived notes
 permalink: /notes/
-description: Archive of older technical notes and writing published on gujin.tech.
-author: Gu Jin
+description: Archived technical notes published on gujin.tech before the site shifted toward tool-first pages.
+kicker: Notes
 ---
 
-These notes are older than the current tool-first direction of the site, but they stay online because they are still useful context and may still help readers landing from search.
+These notes are older than the current tool-first direction of the site, but they remain online because they can still help people arriving from search.
 
-## Archive
-
-<div class="cf frame">
+<div class="note-list note-list--archive">
   {% for post in site.posts %}
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-      <div class="article-item">
-        <header class="post-header">
-          <h2 class="post-title" itemprop="name"><a href="{{ post.url | prepend: site.baseurl }}" itemprop="url">{{ post.title }}</a></h2>
-        </header>
-        <section class="post-excerpt" itemprop="description">
-          <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
-        </section>
-        <div class="post-meta">
-          <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
-        </div>
-      </div>
+    <article class="note-card">
+      <p class="note-card__date">{{ post.date | date: "%B %-d, %Y" }}</p>
+      <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
     </article>
   {% endfor %}
 </div>

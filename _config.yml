@@ -4,11 +4,14 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 
+exclude:
+  - docs
+
 # Site settings
-title: "Gujin"
+title: "GuJin"
 description: >
-   Small web tools and practical notes by GuJin, including Gujin Diff for
-   private image comparison in the browser.
+   Small web tools and practical notes by GuJin, including a browser-based
+   image compare workflow for screenshots and visual review.
 
 email: gujin@gujin.tech
 #blog logo

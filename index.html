@@ -1,107 +1,95 @@
 ---
 layout: default
-title: Small web tools by GuJin
-description: Privacy-friendly web tools and practical notes by GuJin, featuring Gujin Diff for local image comparison.
-body_class: home-template
+title: Image Compare Tool for Screenshots
+description: Compare screenshots and images locally in your browser at diff.gujin.tech. Use overlay, diff view, manual alignment, and export without uploads.
+body_class: home-page
+schema_type: WebSite
 ---
 
-<div class="teaserimage">
-    <div class="teaserimage-image" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }})"{% endif %}>
-        Teaser Image
+<section class="hero">
+  <div class="hero__copy">
+    <p class="kicker">Image compare</p>
+    <h1>Compare screenshots locally, without uploads.</h1>
+    <p class="lede">Use the image compare tool at <a href="https://diff.gujin.tech/">diff.gujin.tech</a> for screenshot comparison, visual change review, manual alignment, diff inspection, and export without uploads.</p>
+    <div class="hero__actions">
+      <a class="button" href="https://diff.gujin.tech/">Open Image Compare</a>
+      <a class="button secondary" href="{{ "/diff/" | prepend: site.baseurl }}">Read Features</a>
     </div>
-</div>
+    <ul class="hero__meta">
+      <li>Runs in the browser</li>
+      <li>Built for screenshots and visual review</li>
+      <li>Designed for local-only image handling</li>
+    </ul>
+  </div>
+  <aside class="hero__panel">
+    <p class="hero__panel-label">Best for</p>
+    <ul class="bullet-list">
+      <li>design QA and implementation review</li>
+      <li>screenshot comparison before release</li>
+      <li>quick visual diff checks without setup</li>
+    </ul>
+  </aside>
+</section>
 
-<header class="blog-header">
-    {% if site.logo %}
-      <a class="blog-logo" href="{{site.url}}{{site.baseurl}}" style="background-image: url('{{ site.logo | prepend: site.baseurl }}')">{{ site.title }}</a>
-    {% endif %}
-    <p class="eyebrow">Tool-first personal site</p>
-    <h1 class="blog-title">Small web tools by GuJin</h1>
-    <h2 class="blog-description">Privacy-friendly tools and practical notes, starting with a local image comparison workflow for screenshots and design review.</h2>
-    <div class="custom-links">
-      <a href="https://diff.gujin.tech/">Open Gujin Diff</a>
-      &nbsp;&nbsp;·&nbsp;&nbsp;
-      <a href="{{ "/tools/" | prepend: site.baseurl }}">Browse tools</a>
-      &nbsp;&nbsp;·&nbsp;&nbsp;
-      <a href="{{ "/notes/" | prepend: site.baseurl }}">Notes</a>
-      &nbsp;&nbsp;·&nbsp;&nbsp;
-      <a href="https://github.com/GuJin">GitHub</a>
-    </div>
-</header>
+<section class="section">
+  <div class="section__heading">
+    <p class="kicker">Why people use it</p>
+    <h2>One focused tool, one clear job.</h2>
+  </div>
+  <div class="card-grid">
+    <article class="info-card">
+      <h3>Compare two images fast</h3>
+      <p>Open the tool and start comparing screenshots, mockups, or other visual assets without creating an account or wiring up local software.</p>
+    </article>
+    <article class="info-card">
+      <h3>Inspect visual changes clearly</h3>
+      <p>Switch between overlay and diff modes, zoom in on trouble spots, and adjust alignment when screenshots do not line up cleanly.</p>
+    </article>
+    <article class="info-card">
+      <h3>Keep your files on your device</h3>
+      <p>The site is positioned around local processing, which makes it useful for quick internal review and privacy-sensitive image checks.</p>
+    </article>
+  </div>
+</section>
 
-<main class="content landing-content" role="main">
-  <section class="landing-section">
-    <h2>Featured tool</h2>
-    <div class="tool-highlight">
-      <div>
-        <p class="eyebrow">Gujin Diff</p>
-        <h3>Compare screenshots and images locally in your browser.</h3>
-        <p class="section-copy">Gujin Diff is a private image comparison tool for screenshots, design references, and visual checks. It runs in the browser, keeps files on your device, and supports overlay, diff, alignment, zoom, and export.</p>
-      </div>
-      <div class="hero-actions">
-        <a class="button" href="https://diff.gujin.tech/">Open Gujin Diff</a>
-        <a class="button secondary" href="{{ "/diff/" | prepend: site.baseurl }}">Learn more</a>
-      </div>
-    </div>
-  </section>
+<section class="section">
+  <div class="section__heading">
+    <p class="kicker">Explore</p>
+    <h2>Start with the pages that matter.</h2>
+  </div>
+  <div class="link-grid">
+    <a class="link-card" href="{{ "/diff/" | prepend: site.baseurl }}">
+      <span class="link-card__title">Image Compare</span>
+      <span class="link-card__copy">Feature overview, use cases, and a direct path to the runtime tool.</span>
+    </a>
+    <a class="link-card" href="{{ "/tools/" | prepend: site.baseurl }}">
+      <span class="link-card__title">Tools</span>
+      <span class="link-card__copy">A compact directory of current public tools.</span>
+    </a>
+    <a class="link-card" href="{{ "/privacy/" | prepend: site.baseurl }}">
+      <span class="link-card__title">Privacy</span>
+      <span class="link-card__copy">What the root site hosts and how the image compare workflow is intended to behave.</span>
+    </a>
+    <a class="link-card" href="{{ "/about/" | prepend: site.baseurl }}">
+      <span class="link-card__title">About</span>
+      <span class="link-card__copy">Why this site exists and why it is intentionally small.</span>
+    </a>
+  </div>
+</section>
 
-  <section class="landing-section">
-    <h2>Use cases</h2>
-    <div class="section-grid">
-      <div class="landing-card">
-        <h3>Design review</h3>
-        <p>Compare implementation screenshots with source mocks and catch visual drift before shipping.</p>
-      </div>
-      <div class="landing-card">
-        <h3>UI regression checks</h3>
-        <p>Overlay two screenshots, inspect pixel differences, and export the current view for review threads.</p>
-      </div>
-      <div class="landing-card">
-        <h3>Private by default</h3>
-        <p>Use the tool without uploading images to a remote server. It is built for quick checks on local files.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="landing-section">
-    <h2>Start here</h2>
-    <div class="section-grid section-grid-wide">
-      <div class="landing-card">
-        <h3><a href="{{ "/tools/" | prepend: site.baseurl }}">Tools</a></h3>
-        <p>Browse the current tool collection and jump straight into the latest projects.</p>
-      </div>
-      <div class="landing-card">
-        <h3><a href="{{ "/about/" | prepend: site.baseurl }}">About</a></h3>
-        <p>Learn what GuJin is building and why the site focuses on small, useful, privacy-friendly workflows.</p>
-      </div>
-      <div class="landing-card">
-        <h3><a href="{{ "/privacy/" | prepend: site.baseurl }}">Privacy</a></h3>
-        <p>See how the root site and Gujin Diff handle data, static hosting, and local-only processing.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="landing-section">
-    <div class="section-heading">
-      <h2>Latest notes</h2>
-      <a href="{{ "/notes/" | prepend: site.baseurl }}">View all notes</a>
-    </div>
-    <div class="cf frame">
-      {% for post in site.posts limit:2 %}
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h3 class="post-title" itemprop="name"><a href="{{ post.url | prepend: site.baseurl }}" itemprop="url">{{ post.title }}</a></h3>
-            </header>
-            <section class="post-excerpt" itemprop="description">
-              <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            </section>
-            <div class="post-meta">
-              <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
-            </div>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
-</main>
+<section class="section section--notes">
+  <div class="section__heading">
+    <p class="kicker">Archive</p>
+    <h2>Older notes stay available, but secondary.</h2>
+  </div>
+  <div class="note-list">
+    {% for post in site.posts limit:2 %}
+      <article class="note-card">
+        <p class="note-card__date">{{ post.date | date: "%B %-d, %Y" }}</p>
+        <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+      </article>
+    {% endfor %}
+  </div>
+  <p class="section__footnote"><a href="{{ "/notes/" | prepend: site.baseurl }}">Browse all notes</a></p>
+</section>

@@ -1,25 +1,24 @@
 ---
 layout: page
 title: Privacy
+heading: Privacy notes for the root site and image compare tool
 permalink: /privacy/
-description: Privacy notes for gujin.tech and Gujin Diff, including the local-only image processing model.
-author: Gu Jin
+description: Privacy notes for gujin.tech and the image compare tool hosted at diff.gujin.tech.
+kicker: Privacy
 ---
 
-This site is a static site and documentation layer for GuJin's public tools.
+`gujin.tech` is a static site used for landing pages, documentation-style copy, and archived notes.
 
 ## Root site
 
-`gujin.tech` serves static pages such as the homepage, tool descriptions, notes, and support pages. It does not require an account to browse.
+The root site is meant to serve normal static pages such as the homepage, about page, privacy page, and tool landing pages. It does not require an account to read.
 
-## Gujin Diff
+## Image compare workflow
 
-Gujin Diff is designed to run image comparison in the browser. The intended model is local-only processing so screenshots and reference images stay on your device instead of being uploaded to a server controlled by the site.
+The image compare tool at `diff.gujin.tech` is positioned as a local browser workflow for screenshots and visual review.
 
-## Third-party services
+The intended behavior is local-only image handling so your screenshots and reference files stay on your device rather than being uploaded to a site-managed backend.
 
-The site may rely on standard hosting, DNS, and CDN infrastructure to deliver static pages. If that changes in a way that materially affects privacy expectations, this page should be updated.
+## Third-party infrastructure
 
-## Contact
-
-If you need to ask about a privacy issue or site behavior, use the contact path linked from [about](/about/) or the GitHub profile at <https://github.com/GuJin>.
+Like most static sites, the pages may be served through hosting, DNS, and CDN infrastructure. If a later version adds anything that materially changes privacy expectations, this page should change with it.

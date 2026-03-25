@@ -1,17 +1,16 @@
 ---
 layout: page
 title: Applications
+heading: Legacy applications entry
 permalink: /app/
-description: Legacy entry point for GuJin tools. Start with Gujin Diff or browse the current tool collection.
-author: Gu Jin
+description: Older links to /app/ now point to the current tool directory and image compare pages.
+kicker: Legacy URL
 ---
 
-This page is kept as a stable entry point for older links.
+This URL is kept for compatibility with older links.
 
-If you are looking for GuJin's current public tools, start here:
+If you are looking for the current public workflow, start here:
 
-- [Open Gujin Diff](https://diff.gujin.tech/)
-- [Browse all tools](/tools/)
-- [Read about Gujin Diff](/diff/)
-
-Older mobile app experiments are no longer the main focus of the site, so this page now acts as a bridge to the current tool collection.
+- [Open Image Compare](https://diff.gujin.tech/)
+- [Read the image compare landing page]({{ "/diff/" | prepend: site.baseurl }})
+- [Browse the current tool directory]({{ "/tools/" | prepend: site.baseurl }})

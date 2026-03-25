@@ -1,27 +1,27 @@
 ---
 layout: page
 title: Tools
+heading: Small web tools, starting with image compare
 permalink: /tools/
-description: Browse GuJin's current tool collection, starting with Gujin Diff for private image comparison.
-author: Gu Jin
+description: A compact directory of current public tools, starting with a browser-based image compare workflow for screenshots and visual review.
+kicker: Tools
 ---
 
-GuJin builds small, focused tools with a bias toward simple workflows and privacy-friendly defaults.
-
-## Available now
-
-### Gujin Diff
-
-Compare screenshots and images locally in your browser. It is built for visual QA, design review, and quick screenshot comparison without uploading files to a server.
-
-<p><a class="button" href="https://diff.gujin.tech/">Open Gujin Diff</a> <a class="button secondary" href="{{ "/diff/" | prepend: site.baseurl }}">Learn more</a></p>
-
-## What to expect
-
-- Small tools that solve one clear problem
-- Static landing pages and documentation on `gujin.tech`
-- The runtime tool itself hosted on its own subdomain when that makes the workflow cleaner
-
-## Looking for older projects?
-
-The site still keeps [notes](/notes/) and [legacy application links](/app/) available, but the current public tool work starts with Gujin Diff.
+<div class="tool-list">
+  <article class="tool-card">
+    <div>
+      <p class="tool-card__label">Current tool</p>
+      <h2>Image Compare</h2>
+      <p>Compare screenshots and images locally in your browser. Use overlay view, diff view, manual alignment, zoom, and export for fast visual review.</p>
+      <ul class="bullet-list">
+        <li>best for screenshots and mockups</li>
+        <li>good for design QA and visual diff checks</li>
+        <li>meant for quick local use at diff.gujin.tech</li>
+      </ul>
+    </div>
+    <div class="tool-card__actions">
+      <a class="button" href="https://diff.gujin.tech/">Open Image Compare</a>
+      <a class="button secondary" href="{{ "/diff/" | prepend: site.baseurl }}">Read the landing page</a>
+    </div>
+  </article>
+</div>

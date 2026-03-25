@@ -2,63 +2,79 @@
   {% assign resolved_lang = page.lang | default: site.lang | default: "en" %}
   {% assign page_description = page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 200 %}
   {% assign canonical_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
-  {% assign resolved_title = page.title | default: site.title %}
+  {% assign page_title = page.seo_title | default: page.title | default: site.title %}
   {% if page.url == "/" %}
-    {% assign document_title = resolved_title %}
+    {% assign document_title = page_title | append: " | " | append: site.title %}
   {% elsif page.title %}
-    {% assign document_title = resolved_title | append: " | " | append: site.title %}
+    {% assign document_title = page_title | append: " | " | append: site.title %}
   {% else %}
     {% assign document_title = site.title %}
   {% endif %}
-  {% assign og_type = page.og_type | default: "website" %}
+  {% assign og_image = page.image | default: site.logo | prepend: site.baseurl | prepend: site.url %}
+  {% assign schema_type = page.schema_type | default: "WebPage" %}
   {% if page.date %}
-    {% assign og_type = "article" %}
+    {% assign schema_type = "Article" %}
   {% endif %}
+
   <meta charset="utf-8">
-  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <title>{{ document_title }}</title>
-  <meta name="description" content="{{ page_description }}" />
+  <meta name="description" content="{{ page_description }}">
+  <meta name="theme-color" content="#0f3d36">
+  <meta name="robots" content="index,follow">
 
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  {% if site.twitter_handle %}
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="{{ site.twitter_handle }}" />
-    <meta name="twitter:title" content="{{ resolved_title }}" />
-    <meta name="twitter:image" content="{{ site.logo | prepend: site.baseurl | prepend: site.url }}" />
-    <meta name="twitter:description" content="{{ page_description }}" />
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+  <meta property="og:locale" content="{{ resolved_lang }}">
+  {% if page.date %}
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
   {% endif %}
-  
-  <meta property="og:site_name" content="{{ site.title }}" />
-  <meta property="og:title" content="{{ resolved_title }}"/>
-  <meta property="og:description" content="{{ page_description }}" />
-  <meta property="og:image" content="{% if page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.logo | prepend: site.baseurl | prepend: site.url }}{% endif %}" />
-  <meta property="og:url" content="{{ canonical_url }}" >
-  <meta property="og:type" content="{{ og_type }}" />
-  <meta property="og:locale" content="{{ resolved_lang }}" />
-  {% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
 
-  <link rel="canonical" href="{{ canonical_url }}"/>
-  <link rel="shortcut icon" href="{{ "/assets/images/favicon.png" | prepend: site.baseurl }}" type="image/png"/>
-  <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }}">
+  <meta name="twitter:description" content="{{ page_description }}">
+  <meta name="twitter:image" content="{{ og_image }}">
 
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ "/css/main.css"  | prepend: site.baseurl  }}" />
-  <link rel="stylesheet" type="text/css" media="print" href="{{ "/css/print.css"  | prepend: site.baseurl  }}" />
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="icon" href="{{ "/assets/images/favicon.png" | prepend: site.baseurl }}" type="image/png">
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" media="print" href="{{ "/css/print.css" | prepend: site.baseurl }}">
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "{{ site.title }}",
-      "url": "{{ site.url }}",
-      "description": "{{ site.description | strip_html | strip_newlines | escape }}",
-      "inLanguage": "{{ resolved_lang }}"
+      "@type": "{{ schema_type }}",
+      "name": {{ page_title | jsonify }},
+      "headline": {{ page.heading | default: page.title | default: site.title | jsonify }},
+      "description": {{ page_description | jsonify }},
+      "url": {{ canonical_url | jsonify }},
+      {% if page.date %}
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      {% endif %}
+      "publisher": {
+        "@type": "Person",
+        "name": {{ site.name | jsonify }}
+      }
     }
   </script>
+  {% if page.url == "/" %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site.url | jsonify }},
+        "description": {{ site.description | strip_html | strip_newlines | jsonify }},
+        "publisher": {
+          "@type": "Person",
+          "name": {{ site.name | jsonify }}
+        }
+      }
+    </script>
+  {% endif %}
 </head>

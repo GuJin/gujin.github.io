@@ -1,740 +1,431 @@
 ---
 ---
 
-@import 'syntax-highlighting'
+:root
+  --bg: #f4efe6
+  --surface: rgba(255, 252, 245, 0.86)
+  --surface-strong: #fffdf8
+  --ink: #15263a
+  --muted: #5f6d7b
+  --line: rgba(21, 38, 58, 0.12)
+  --accent: #d65a31
+  --accent-strong: #b7421b
+  --accent-soft: rgba(214, 90, 49, 0.12)
+  --shadow: 0 24px 64px rgba(21, 38, 58, 0.12)
+  --radius: 28px
+  --radius-sm: 18px
+  --font-display: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", Georgia, serif
+  --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif
 
-@import 'bourbon/bourbon'
+*
+  box-sizing: border-box
 
-.cf
-  @include clearfix
-
-$rs: 16px
-
-$font-serif: Linux Libertine
-$font-sans: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif
-
-
-@mixin respond-to($breakpoint)
-  @media only screen and (max-width: $breakpoint + px)
-    @content
-
-// Only needed for syntax highlighting
-%vertical-rhythm
-  margin-bottom: $rs
-
-main
-  display: block
-
-
+html
+  scroll-behavior: smooth
 
 body
-  font-family: $font-sans
   margin: 0
-  padding: 0
+  color: var(--ink)
+  background: radial-gradient(circle at top, rgba(15, 61, 54, 0.18), transparent 34%), linear-gradient(180deg, #f9f5ee 0%, var(--bg) 100%)
+  font-family: var(--font-body)
+  line-height: 1.6
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased
-  -moz-font-feature-settings: "liga=1, dlig=1"
-  -ms-font-feature-settings: "liga", "dlig"
-  -webkit-font-feature-settings: "liga", "dlig"
-  -o-font-feature-settings: "liga", "dlig"
-  font-feature-settings: "liga", "dlig"
 
-.logo-readium
-  position: fixed
-  left: 10px
-  top: 10px
-  width: $rs*3
-  height: $rs*3
-  background-color: #000
-  overflow: hidden
-  z-index: 99
-  .logo
-    display: block
-    position: absolute
-    top: $rs/2
-    left: $rs/2
-    width: $rs*2
-    height: $rs*2
-    background-size: cover
-    background-repeat: no-repeat
+a
+  color: inherit
 
-.teaserimage
-  height: 450px
-  position: relative
-  overflow: hidden
-  background-color: #000
-  .teaserimage-image
-    background-size: cover
-    background-position: center
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    z-index: 1
-    text-indent: -9999px
+img
+  max-width: 100%
+  display: block
 
-.blog-header
-  width: 100%
-  max-width: 640px
-  margin: 0 auto
-  position: relative
-  padding: 0
-  @include box-sizing(border-box)
-  @include respond-to(800)
-    padding: 0 $rs
-  .blog-logo
-    width: $rs*7.5
-    height: $rs*7.5
-    position: absolute
-    top: -$rs*3.75
-    right: 50%
-    margin-right: -$rs*3.75
-    background-size: cover
-    border-radius: 50%
-    z-index: 99
-    text-indent: -9999px
-    border: 3px solid #fff
-    background-color: #fff
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3)
-    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3)
-    box-shadow: 0 1px 1px rgba(0,0,0,0.3)
-  .blog-title
-    margin: 0
-    padding: $rs*5.25 $rs $rs/2
-    font-size: 50px
-    text-align: center
-    font-weight: 700
-    letter-spacing: -2px
-    outline: 0
-    line-height: 50px
-    word-break: break-word
-    color: #333
-  .blog-description
-    margin: 0 0 20px
-    padding: 0 $rs*2
-    font-size: $rs/8*9
-    line-height: 1.5
-    color: #666
-    text-align: center
-    font-weight: 400
-  .custom-links
-    margin: 0 0 50px
-    text-align: center
-    color: #ccc
-    a
-      text-decoration: none
-      color: #999
-      &:hover
-        color: #333
-
-.eyebrow
-  margin: 0
-  text-transform: uppercase
-  letter-spacing: 2px
-  font-size: 13px
-  color: #7d7d76
-  text-align: center
-
-.button
-  display: inline-block
-  margin-right: 12px
-  margin-bottom: 12px
-  padding: 12px 18px
-  border-radius: 999px
-  background: #222
-  color: #fff
-  text-decoration: none
-  font-size: 15px
-  &:hover
-    background: #000
-  &.secondary
-    background: transparent
-    color: #333
-    border: 1px solid #ccc
-    &:hover
-      border-color: #999
-
-.content
-  width: 100%
-  max-width: 640px
-  margin: 0 auto
-  @include box-sizing(border-box)
-  @include respond-to(800)
-    padding: 0 $rs*2
-  article
-    padding: 40px 0
-    border-bottom: 1px solid #f2f2f0
-    &:last-child
-      border-bottom: 0px
-    .post-title
-      letter-spacing: -0.02em
-      font-weight: 700
-      font-style: normal
-      display: block
-      font-size: 28px
-      line-height: 1.1
-      margin: 0 0
-      a
-        text-decoration: none
-        color: #333332
-        &:hover
-          text-decoration: none
-    .post-excerpt
-      letter-spacing: -0.02em
-      font-weight: 300
-      font-style: normal
-      font-size: 20px
-      line-height: 1.3
-      color: #666665
-    .post-meta
-      font-size: 14px
-      color: #b3b3b1
-      line-height: 30px
-      a
-        color: #b3b3b1
-        text-decoration: none
-        &:hover
-          text-decoration: underline
-
-.landing-content
-  max-width: 760px
-  .landing-section
-    padding: 0 0 48px
-    margin-bottom: 48px
-    border-bottom: 1px solid #f2f2f0
-    &:last-child
-      border-bottom: 0
-      margin-bottom: 0
-      padding-bottom: 0
-  .section-heading
-    @include clearfix
-    h2
-      float: left
-    a
-      float: right
-      margin-top: 8px
-      color: #666
-      text-decoration: none
-      &:hover
-        color: #333
-        text-decoration: underline
-    @include respond-to(800)
-      h2, a
-        float: none
-        display: block
-      a
-        margin-top: 0
-        margin-bottom: 16px
-  h2
-    letter-spacing: -0.03em
-    font-size: 34px
-    line-height: 1.15
-    margin: 0 0 16px
-  h3
-    font-size: 26px
-    line-height: 1.2
-    margin: 0 0 12px
-  p
-    font-size: 18px
-    line-height: 1.6
-    color: #555
-  .section-copy
-    margin-bottom: 0
-  .tool-highlight
-    background: #f8f8f6
-    border: 1px solid #ecece7
-    padding: 32px
-    @include box-sizing(border-box)
-  .hero-actions
-    margin-top: 24px
-  .section-grid
-    display: flex
-    flex-wrap: wrap
-    margin: 0 -12px
-    &.section-grid-wide
-      .landing-card
-        width: calc(33.333% - 24px)
-    @include respond-to(800)
-      margin: 0
-      &.section-grid-wide
-        .landing-card
-          width: 100%
-  .landing-card
-    width: calc(50% - 24px)
-    margin: 0 12px 24px
-    padding: 24px
-    border: 1px solid #ecece7
-    background: #fff
-    @include box-sizing(border-box)
-    h3
-      font-size: 22px
-    p
-      font-size: 17px
-      margin: 0
-    @include respond-to(800)
-      width: 100%
-      margin: 0 0 16px
-  .post
-    padding: 24px 0
-
-.page-description
-  font-size: 20px
-  line-height: 1.5
-  color: #666
-  margin: 0 0 18px
-.container.featured
-  padding-bottom: 40px
-
-.post-template .content
-  max-width: 700px
-
-.index-headline
-  border-top: 1px solid #dededc
-  margin: 0
-  padding: 16px 0
-  span
-    color: #b3b3b1
-    font-size: $rs/8*5
-    text-transform: uppercase
-    letter-spacing: 1px
-
-.archive-template
-  .index-headline.featured
-    display: none
-
-.pagination
-  text-align: center
-  padding: $rs*3 0 0
-  font-size: $rs/4*3
-  a
-    color: #999
-    text-decoration: none
-    &:hover
-      color: #333
-
-.post-reading
+.skip-link
   position: absolute
-  top: 10px
-  right: 30px
-  line-height: 44px
-  display: inline-block
-  white-space: nowrap
-  color: rgba(0,0,0,0.25)
-  font-size: 14px
-  letter-spacing: -0.02em
-  font-weight: 400
-  font-style: normal
-  font-family: $font-sans
-  z-index: 999
-.tag-articleimage .post-reading
-  color: rgba(255,255,255,0.9)
-  text-shadow: 0px 1px 4px rgba(0,0,0,0.25), 0px 0px 1px rgba(0,0,0,0.5)
+  left: -9999px
+  top: 0
+  &:focus
+    left: 16px
+    top: 16px
+    z-index: 20
+    padding: 10px 14px
+    background: var(--surface-strong)
+    border-radius: 999px
+    text-decoration: none
+
+.site-shell
+  min-height: 100vh
+
+.site-header
+  position: sticky
+  top: 0
+  z-index: 10
+  backdrop-filter: blur(14px)
+  background: rgba(244, 239, 230, 0.78)
+  border-bottom: 1px solid var(--line)
+
+.site-header__inner,
+.site-main,
+.site-footer
+  width: min(1100px, calc(100vw - 40px))
+  margin: 0 auto
+
+.site-header__inner
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 18px 0
+  gap: 20px
+
+.site-brand
+  text-decoration: none
+  display: inline-flex
+  flex-direction: column
+  gap: 2px
+
+.site-brand__name
+  font-size: 0.95rem
+  font-weight: 700
+  letter-spacing: 0.08em
+  text-transform: uppercase
+
+.site-brand__tag
+  font-size: 0.8rem
+  color: var(--muted)
+
+.site-nav
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-end
+  gap: 16px
+  a
+    text-decoration: none
+    color: var(--muted)
+    font-size: 0.95rem
+    &:hover
+      color: var(--ink)
+
+.site-main
+  padding: 56px 0 96px
 
 .site-footer
-  margin: 0 auto
-  padding: $rs*3 0
-  width: 100%
-  max-width: 640px
-  font-size: $rs/4*3
-  text-align: center
-  color: #999
-  line-height: $rs*1.1
-  .site-footer-links
-    margin-bottom: 20px
-    a
-      display: inline-block
-      margin: 0 10px 10px
-  a
-    color: #666
-    text-decoration: none
-    &:hover
-      color: #333
-.post
-  .article-image
-    position: absolute
-    background-color: #000
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    overflow: hidden
-    @media(min-width: 700px)
-      .post-image-image
-        background-size: cover
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        text-indent: -9999px
-        padding-top: 33%
-        z-index: 1
-      .post-image-image2
-        display: none
-    @media(max-width: 700px)
-      .post-image-image
-        display: none
-      .post-image-image2
-        background-size: cover
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        text-indent: -9999px
-        padding-top: 33%
-        z-index: 1
-    .post-meta
-      position: absolute
-      bottom: $rs*5
-      left: 30%
-      right: 30%
-      z-index: 9
-      font-family: $font-sans
-      @include box-sizing(border-box)
-      @include respond-to(800)
-        left: $rs
-        right: $rs
-    .post-title
-      font-weight: 700
-      font-style: normal
-      letter-spacing: -0.04em
-      font-size: 50px
-      line-height: 1.1
-      color: #fff
-      margin-bottom: 16px
-      text-shadow: 0px 1px 16px rgba(0,0,0,0.5), 0px 0px 1px rgba(0,0,0,0.5)
-    .author-image
-      display: inline-block
-      width: 30px
-      height: 30px
-      line-height: 30px
-      margin-right: 8px
-      margin-bottom: -10px
-      float: left
-      background-size: cover
-      border-radius: 100%
-      text-indent: -9999px
-    .author-name
-      display: inline
-    .post-meta-text
-      color: rgba(255,255,255,0.75)
-      letter-spacing: -0.02em
-      font-weight: 400
-      font-style: normal
-      text-shadow: 0px 1px 4px rgba(0,0,0,0.25), 0px 0px 1px rgba(0,0,0,0.5)
-      font-size: 14px
-      overflow: hidden
-      font-family: $font-sans
-      white-space: nowrap
-      text-overflow: ellipsis
-      a
-        color: rgba(255,255,255,0.75)
-        &:hover
-          color: rgba(255,255,255,1)
-    .fa-angle-down
-      font-size: 32px
-      margin: 64px auto 0
-      color: rgba(255,255,255,0.75)
-      &:hover
-        color: #fff
-    .topofpage
-      text-decoration: underline
-  .noarticleimage
-    .post-meta
-      font-family: $font-sans
-      padding-top: 60px
-    .post-title
-      font-weight: 700
-      font-style: normal
-      letter-spacing: -0.04em
-      font-size: 50px
-      line-height: 1.1
-      color: #333332
-      margin-bottom: 16px
-    .author-image
-      display: inline-block
-      width: 30px
-      height: 30px
-      line-height: 30px
-      margin-right: 8px
-      margin-bottom: -10px
-      float: left
-      background-size: cover
-      border-radius: 100%
-      text-indent: -9999px
-    .author-name
-      display: inline
-    .post-meta-text
-      color: #b3b3b1
-      letter-spacing: -0.02em
-      font-weight: 400
-      font-style: normal
-      font-size: 14px
-      overflow: hidden
-      font-family: $font-sans
-      white-space: nowrap
-      text-overflow: ellipsis
-  .post-content
-    width: 100%
-    font-family: $font-serif
-    color: #333
-    h1, h2, h3
-      font-family: $font-sans
-    h3, h4, h5, h6
-      letter-spacing: -0.02em
-      font-weight: 700
-      font-style: normal
-      font-size: 24px
-      line-height: 1.3
-      margin: 0
-      font-family: $font-sans
-      margin-bottom: 4px
-    h2, h1
-      letter-spacing: -0.02em
-      font-weight: 700
-      font-style: normal
-      font-size: 32px
-      line-height: 1.2
-      padding-top: 31px
-      margin-bottom: 4px
-    p
-      font-weight: 400
-      font-style: normal
-      font-size: 18px
-      line-height: 30px
-      margin: 0
-      padding-bottom: 30px
-      color: #333
-      -webkit-hyphens: auto
-      -moz-hyphens: auto
-      hyphens: auto
-    a
-      color: #333
-      text-decoration: underline
-    img
-      max-width: 100%
-      margin: 0 auto
-    figure
-      margin: 0
-      padding: 0 0 30px
-    figcaption
-      font-weight: 400
-      font-style: italic
-      font-size: 16px
-      line-height: 1.3
-      color: #666665
-      outline: 0
-      z-index: 300
-      text-align: center
-    hr
-      border: 0
-      padding: 0
-      display: block
-      width: 15%
-      margin: 30px auto
-      border: 0px solid #ddd
-      border-top: 1px solid #ddd
-    blockquote
-      margin: 0 0 30px
-      margin-left: 0px
-      border-left: 3px solid #57ad68
-      padding-left: 20px
-      p
-        letter-spacing: 0.01rem
-        font-weight: 400
-        font-style: italic
-        mborder-left: 3px solid #57ad68
-        mpadding-left: 20px
-        mmargin-left: -26px
-        padding-bottom: 3px
-    ul, ol
-      padding: 0 0 30px
-      margin: 0
-    li
-      padding: 0
-      font-weight: 400
-      font-style: normal
-      font-size: 18px
-      line-height: 30px
-      margin-left: 30px
-      margin-bottom: 12px
-      padding-top: 2px
-      p
-        padding: 0 0 golden-ratio(1rem,  1)
-    ol li
-      list-style-type: decimal
-  .bottom-teaser
-    padding: 50px 0
-    font-family: $font-sans
-    hr
-      border: 0
-      padding: 0
-      display: block
-      width: 15%
-      margin: 16px 0 16px 100px
-      border: 0px solid #ddd
-      border-top: 1px solid #ddd
-    .isLeft
-      float: left
-      width: 47%
-      @include box-sizing(border-box)
-      @include respond-to(800)
-        width: 100%
-        padding-bottom: $rs*2
-      .index-headline
-        padding-bottom: 32px
-      a
-        color: #000
-        text-decoration: none
-        &:hover
-          color: #333
-          text-decoration: underline
-      .author-image
-        display: block
-        width: 80px
-        height: 80px
-        float: left
-        background-size: cover
-        border-radius: 100%
-        text-indent: -9999px
-      h4
-        font-size: 18px
-        line-height: 1.1
-        font-weight: 700
-        padding: 0
-        margin: 0
-        padding-left: 100px
-      p
-        font-size: 14px
-        line-height: 1.3
-        font-weight: 400
-        padding: 0
-        margin: 0
-        padding-left: 100px
-        &.published
-          color: #999
-    .isRight
-      float: right
-      width: 47%
-      @include box-sizing(border-box)
-      @include respond-to(800)
-        width: 100%
-      .index-headline
-        padding-bottom: 32px
-      .site-footer
-        margin: 0
-        padding: 0
-        color: #333
-        text-align: left
-        font-size: 14px
-        line-height: 1.3
-        color: #999
-        a
-          color: #333
-          text-decoration: none
-          &:hover
-            text-decoration: underline
-        .poweredby
-          display: block
-          padding-bottom: 18px
-          font-weight: 700
-          color: #333
-.share
-  text-align: right
-  padding: 20px 0 0
+  padding: 0 0 56px
+
+.site-footer__inner
+  display: grid
+  grid-template-columns: 1.4fr 1fr
+  gap: 28px
+  padding: 28px
+  border: 1px solid var(--line)
+  border-radius: var(--radius)
+  background: var(--surface)
+  box-shadow: var(--shadow)
+
+.site-footer__title
+  margin: 0 0 10px
+  font-size: 0.9rem
+  letter-spacing: 0.08em
+  text-transform: uppercase
+  color: var(--muted)
+
+.site-footer__copy
+  margin: 0
+  font-size: 1rem
+  max-width: 38rem
+
+.site-footer__nav
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 10px 18px
   a
     text-decoration: none
-    color: #bbb
-    padding-left: 12px
-    .hidden
-      display: none
+    color: var(--muted)
     &:hover
-      color: #333
+      color: var(--ink)
 
-.bottom-closer
-  width: 100%
-  position: relative
-  overflow: hidden
-  .background-closer-image
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    text-indent: -9999px
-    background-size: cover
-    background-repeat: no-repeat
-    background-position: center
-  .inner
-    width: 100%
-    position: relative
-    z-index: 99
-    max-width: 640px
-    padding: 120px 0 90px
-    text-align: center
-    margin: 0 auto
-    .blog-title
-      margin: 0
-      padding: 0 0 10px
-      font-size: 50px
-      text-align: center
-      font-weight: 700
-      letter-spacing: -2px
-      outline: 0
-      line-height: 50px
-      word-break: break-word
-      color: #fff
-      text-shadow: 0px 1px 16px rgba(0,0,0,0.5), 0px 0px 1px rgba(0,0,0,0.5)
-    .blog-description
-      margin: 0 0 50px
-      padding: 0 $rs*2
-      font-size: $rs/8*9
-      line-height: 1.5
-      color: #fff
-      text-align: center
-      font-weight: 400
-      text-shadow: 0px 1px 16px rgba(0,0,0,0.5), 0px 0px 1px rgba(0,0,0,0.5)
-    .custom-links
-      margin: 0 0 50px
-    .btn
-      display: inline-block
-      text-align: center
-      letter-spacing: -0.02em
-      font-size: 15px
-      font-weight: 400
-      font-style: normal
-      text-decoration: none
-      cursor: pointer
-      height: 44px
-      background: #57ad68
-      color: #fff
-      vertical-align: middle
-      box-sizing: border-box
-      border-radius: 999em
-      line-height: 44px
-      padding: 0 18px
+.site-footer__meta
+  display: flex
+  justify-content: space-between
+  gap: 16px
+  font-size: 0.9rem
+  color: var(--muted)
+  padding: 18px 8px 0
 
-#disqus_thread
-  margin-top: 50px
-.post-tag-articleimage
-  display: none
+.hero
+  display: grid
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr)
+  gap: 28px
+  align-items: start
+  margin-bottom: 64px
 
-pre,
-code
-  font-size: 15px
-  border: 1px solid #e8e8e8
-  border-radius: 3px
-  background-color: #eef
+.hero__copy,
+.hero__panel,
+.section,
+.page,
+.post-entry
+  border: 1px solid var(--line)
+  border-radius: var(--radius)
+  background: var(--surface)
+  box-shadow: var(--shadow)
 
-code
-  padding: 1px 5px
+.hero__copy
+  padding: 36px
 
-pre
-  padding: 8px 12px
-  overflow-x: scroll
-  > code
-    border: 0
-    padding-right: 0
-    padding-left: 0
+.hero__panel
+  padding: 28px
+  background: linear-gradient(180deg, rgba(15, 61, 54, 0.95), rgba(15, 61, 54, 0.82))
+  color: #f6f0e8
+
+.hero__panel-label
+  margin: 0 0 18px
+  font-size: 0.8rem
+  letter-spacing: 0.08em
+  text-transform: uppercase
+  color: rgba(246, 240, 232, 0.7)
+
+.hero__actions
+  display: flex
+  flex-wrap: wrap
+  gap: 12px
+  margin: 28px 0 24px
+
+.hero__meta
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  padding: 0
+  margin: 0
+  list-style: none
+  li
+    padding: 10px 14px
+    border-radius: 999px
+    background: var(--accent-soft)
+    color: var(--ink)
+    font-size: 0.92rem
+
+.section
+  padding: 32px
+  margin-bottom: 28px
+
+.section__heading
+  margin-bottom: 22px
+  max-width: 40rem
+
+.section__footnote
+  margin: 20px 0 0
+  a
+    color: var(--muted)
+
+.kicker
+  margin: 0 0 14px
+  font-size: 0.82rem
+  letter-spacing: 0.1em
+  text-transform: uppercase
+  color: var(--accent)
+
+h1,
+h2,
+h3,
+h4
+  margin: 0
+  font-family: var(--font-display)
+  line-height: 1.05
+  letter-spacing: -0.03em
+
+h1
+  font-size: clamp(3rem, 8vw, 5.4rem)
+  max-width: 11ch
+
+h2
+  font-size: clamp(2rem, 4vw, 3rem)
+  margin-bottom: 10px
+
+h3
+  font-size: 1.55rem
+  margin-bottom: 10px
+
+.lede
+  font-size: 1.18rem
+  color: var(--muted)
+  margin: 18px 0 0
+  max-width: 42rem
+
+p
+  margin: 0 0 16px
+
+.button
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  min-height: 48px
+  padding: 0 18px
+  border-radius: 999px
+  border: 1px solid transparent
+  background: var(--accent)
+  color: #fff8f1
+  text-decoration: none
+  font-weight: 600
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease
+  &:hover
+    background: var(--accent-strong)
+    transform: translateY(-1px)
+  &.secondary
+    background: transparent
+    border-color: var(--line)
+    color: var(--ink)
+    &:hover
+      border-color: rgba(21, 38, 58, 0.3)
+      background: rgba(255, 255, 255, 0.55)
+
+.card-grid,
+.link-grid,
+.note-list
+  display: grid
+  gap: 18px
+
+.card-grid
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+
+.link-grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+
+.note-list
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+
+.info-card,
+.link-card,
+.note-card,
+.tool-card
+  border: 1px solid var(--line)
+  border-radius: var(--radius-sm)
+  background: rgba(255, 255, 255, 0.56)
+  padding: 24px
+
+.link-card
+  text-decoration: none
+  transition: transform 0.18s ease, border-color 0.18s ease
+  &:hover
+    transform: translateY(-2px)
+    border-color: rgba(21, 38, 58, 0.28)
+
+.link-card__title
+  display: block
+  font-family: var(--font-display)
+  font-size: 1.6rem
+  margin-bottom: 8px
+
+.link-card__copy
+  display: block
+  color: var(--muted)
+
+.bullet-list
+  margin: 0
+  padding-left: 18px
+  li
+    margin-bottom: 10px
+
+.tool-list
+  display: grid
+  gap: 20px
+
+.tool-card
+  display: grid
+  grid-template-columns: minmax(0, 1fr) auto
+  gap: 28px
+  align-items: start
+
+.tool-card__label
+  margin: 0 0 10px
+  font-size: 0.82rem
+  letter-spacing: 0.08em
+  text-transform: uppercase
+  color: var(--muted)
+
+.tool-card__actions
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 12px
+
+.page,
+.post-entry
+  padding: 36px
+
+.page-hero
+  margin-bottom: 28px
+
+.post-entry__meta
+  display: flex
+  flex-wrap: wrap
+  gap: 12px
+  margin-top: 18px
+  color: var(--muted)
+  font-size: 0.92rem
+
+.rich-content
+  color: var(--ink)
+  h2, h3
+    margin-top: 28px
+  p, ul, ol, blockquote
+    max-width: 42rem
+  ul, ol
+    padding-left: 20px
+  li
+    margin-bottom: 10px
+  blockquote
+    margin: 0 0 20px
+    padding: 16px 18px
+    border-left: 4px solid var(--accent)
+    background: rgba(255, 255, 255, 0.45)
+  code
+    padding: 2px 6px
+    border-radius: 8px
+    background: rgba(21, 38, 58, 0.06)
+  pre
+    overflow-x: auto
+    padding: 18px
+    border-radius: var(--radius-sm)
+    background: #132033
+    color: #f8f6f1
+  a
+    color: var(--accent-strong)
+  img
+    margin: 24px 0
+    border-radius: 16px
+
+.note-card__date
+  margin: 0 0 10px
+  color: var(--muted)
+  font-size: 0.85rem
+
+.note-list--archive
+  grid-template-columns: 1fr
+
+@media (max-width: 920px)
+  .hero,
+  .tool-card,
+  .site-footer__inner
+    grid-template-columns: 1fr
+  .card-grid
+    grid-template-columns: 1fr
+
+@media (max-width: 720px)
+  .site-header__inner,
+  .site-footer__meta
+    display: block
+  .site-nav
+    justify-content: flex-start
+    margin-top: 16px
+  .site-main
+    padding: 34px 0 72px
+  .hero__copy,
+  .hero__panel,
+  .section,
+  .page,
+  .post-entry,
+  .site-footer__inner
+    padding: 24px
+  .link-grid,
+  .note-list
+    grid-template-columns: 1fr
+  h1
+    max-width: none
