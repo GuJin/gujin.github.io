@@ -1,14 +1,16 @@
 # Build settings
-gems:
+plugins:
   - jemoji
   - jekyll-paginate
+  - jekyll-sitemap
 
 # Site settings
-title: "GuJin"
-description: > # this means to ignore newlines until "email:"
-   a programmer
+title: "Gujin"
+description: >
+   Small web tools and practical notes by GuJin, including Gujin Diff for
+   private image comparison in the browser.
 
-email: a-mail@mail.mail
+email: gujin@gujin.tech
 #blog logo
 logo: "/assets/images/logo.jpg"
 float_logo: false # true, false (default)
@@ -19,25 +21,26 @@ cover: "/assets/images/cover.jpg"
 name: 'Gu Jin'
 author: 'Gu Jin'
 author_image: "/assets/images/logo.jpg"
+lang: "en"
 
 paginate:	5
 
-url: "http://gujin.tech" # the base hostname & protocol for your site
+url: "https://gujin.tech" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
-twitter_handle: '@dirkfabisch'
+twitter_handle:
 
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
 
-google_analytics: UA-91077451-1
+google_analytics:
 
 # social icons and sharing options
 # where the icons from : http://fontawesome.io/icons/
 social:
   - icon:	github
     url:	https://github.com/GuJin
-    desc:	Follow me on github
+    desc:	View GuJin on GitHub
     share_url:
     share_title:
     share_link:

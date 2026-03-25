@@ -1,10 +1,17 @@
 <!-- footer start -->
 
 <footer class="site-footer">
-  <a class="subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
+  <nav class="site-footer-links" aria-label="Footer">
+    <a href="{{ "/tools/" | prepend: site.baseurl }}">Tools</a>
+    <a href="{{ "/diff/" | prepend: site.baseurl }}">Gujin Diff</a>
+    <a href="{{ "/notes/" | prepend: site.baseurl }}">Notes</a>
+    <a href="{{ "/about/" | prepend: site.baseurl }}">About</a>
+    <a href="{{ "/privacy/" | prepend: site.baseurl }}">Privacy</a>
+    <a href="https://github.com/GuJin">GitHub</a>
+  </nav>
     <div class="inner">
          <section class="copyright">All content copyright <a href="mailto:{{ site.email}}">{{ site.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.</section>
-         <section class="poweredby">Made with <a href="http://jekyllrb.com"> Jekyll</a></section>
+         <section class="poweredby">Built with <a href="https://jekyllrb.com">Jekyll</a></section>
     </div>
 </footer>
 

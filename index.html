@@ -1,5 +1,8 @@
 ---
 layout: default
+title: Small web tools by GuJin
+description: Privacy-friendly web tools and practical notes by GuJin, featuring Gujin Diff for local image comparison.
+body_class: home-template
 ---
 
 <div class="teaserimage">
@@ -12,75 +15,93 @@ layout: default
     {% if site.logo %}
       <a class="blog-logo" href="{{site.url}}{{site.baseurl}}" style="background-image: url('{{ site.logo | prepend: site.baseurl }}')">{{ site.title }}</a>
     {% endif %}
-    <h1 class="blog-title">{{ site.title }}</h1>
-    <h2 class="blog-description">{{ site.description }}</h2>
+    <p class="eyebrow">Tool-first personal site</p>
+    <h1 class="blog-title">Small web tools by GuJin</h1>
+    <h2 class="blog-description">Privacy-friendly tools and practical notes, starting with a local image comparison workflow for screenshots and design review.</h2>
     <div class="custom-links">
-      {% for social in site.social %}
-        {% if social.url %}
-            <a class="icon-{{ social.icon }}" href="{{ social.url }}" {% if social.desc %} title="{{ social.desc }}"{% endif %}">
-              <i class="fa fa-{{ social.icon }}"></i>
-            </a>
-            &nbsp;&nbsp;·&nbsp;&nbsp;
-        {% endif %}
-      {% endfor %}
-      <a href={{ "/app/" | prepend: site.baseurl }}>应用</a>
-     <!--  &nbsp;&nbsp;·&nbsp;&nbsp;
-      <a href={{ "/about/" | prepend: site.baseurl }}>关于</a> -->
+      <a href="https://diff.gujin.tech/">Open Gujin Diff</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      <a href="{{ "/tools/" | prepend: site.baseurl }}">Browse tools</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      <a href="{{ "/notes/" | prepend: site.baseurl }}">Notes</a>
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      <a href="https://github.com/GuJin">GitHub</a>
     </div>
 </header>
 
+<main class="content landing-content" role="main">
+  <section class="landing-section">
+    <h2>Featured tool</h2>
+    <div class="tool-highlight">
+      <div>
+        <p class="eyebrow">Gujin Diff</p>
+        <h3>Compare screenshots and images locally in your browser.</h3>
+        <p class="section-copy">Gujin Diff is a private image comparison tool for screenshots, design references, and visual checks. It runs in the browser, keeps files on your device, and supports overlay, diff, alignment, zoom, and export.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button" href="https://diff.gujin.tech/">Open Gujin Diff</a>
+        <a class="button secondary" href="{{ "/diff/" | prepend: site.baseurl }}">Learn more</a>
+      </div>
+    </div>
+  </section>
 
-<main class="content" role="main">  
+  <section class="landing-section">
+    <h2>Use cases</h2>
+    <div class="section-grid">
+      <div class="landing-card">
+        <h3>Design review</h3>
+        <p>Compare implementation screenshots with source mocks and catch visual drift before shipping.</p>
+      </div>
+      <div class="landing-card">
+        <h3>UI regression checks</h3>
+        <p>Overlay two screenshots, inspect pixel differences, and export the current view for review threads.</p>
+      </div>
+      <div class="landing-card">
+        <h3>Private by default</h3>
+        <p>Use the tool without uploading images to a remote server. It is built for quick checks on local files.</p>
+      </div>
+    </div>
+  </section>
 
-<!--  <h5 class="index-headline featured"><span>Android</span></h5>
- <div class="container featured">
-    {% for post in site.tags.android %}
-      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-        <div class="article-item">
-          <header class="post-header">
-            <h2 class="post-title" itemprop="name"><a href="{{ post.url | prepend: site.baseurl }}" itemprop="url">{{ post.title }}</a></h2>
-          </header>
-          <section class="post-excerpt" itemprop="description">
-            <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
-          </section>
-          <div class="post-meta">
-            <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
+  <section class="landing-section">
+    <h2>Start here</h2>
+    <div class="section-grid section-grid-wide">
+      <div class="landing-card">
+        <h3><a href="{{ "/tools/" | prepend: site.baseurl }}">Tools</a></h3>
+        <p>Browse the current tool collection and jump straight into the latest projects.</p>
+      </div>
+      <div class="landing-card">
+        <h3><a href="{{ "/about/" | prepend: site.baseurl }}">About</a></h3>
+        <p>Learn what GuJin is building and why the site focuses on small, useful, privacy-friendly workflows.</p>
+      </div>
+      <div class="landing-card">
+        <h3><a href="{{ "/privacy/" | prepend: site.baseurl }}">Privacy</a></h3>
+        <p>See how the root site and Gujin Diff handle data, static hosting, and local-only processing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section">
+    <div class="section-heading">
+      <h2>Latest notes</h2>
+      <a href="{{ "/notes/" | prepend: site.baseurl }}">View all notes</a>
+    </div>
+    <div class="cf frame">
+      {% for post in site.posts limit:2 %}
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+          <div class="article-item">
+            <header class="post-header">
+              <h3 class="post-title" itemprop="name"><a href="{{ post.url | prepend: site.baseurl }}" itemprop="url">{{ post.title }}</a></h3>
+            </header>
+            <section class="post-excerpt" itemprop="description">
+              <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            </section>
+            <div class="post-meta">
+              <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
+            </div>
           </div>
-        </div>
-      </article>
-    {% endfor %}
-  </div> -->
-
-  <h5 class="index-headline normal"><span>Regular</span></h5>
-  <div class="cf frame">
-    {% for post in paginator.posts %}
-      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-        <div class="article-item">
-          <header class="post-header">
-            <h2 class="post-title" itemprop="name"><a href="{{ post.url | prepend: site.baseurl }}" itemprop="url">{{ post.title }}</a></h2>
-          </header>
-          <section class="post-excerpt" itemprop="description">
-            <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
-          </section>
-          <div class="post-meta">
-            <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
-          </div>
-        </div>
-      </article>
-    {% endfor %}
-  </div>
-
-  <nav class="pagination" role="navigation">
-    {% if paginator.next_page %}
-      <a class="newer-posts" href={{ "/page" | prepend: site.baseurl | append: paginator.next_page }}>&larr; Older posts</a>
-    {% endif %}
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.previous_page %}
-      {% if paginator.page == 2 %}
-        <a class="older-posts" href={{ "/" | prepend: site.baseurl }}>Newer posts &rarr;</a>
-      {% else %}
-        <a class="older-posts" href={{ "/page" | prepend: site.baseurl | append: paginator.previous_page }}>Newer posts &rarr;</a>
-      {% endif %}
-    {% endif %}
-  </nav>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
 </main>
