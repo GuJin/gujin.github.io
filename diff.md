@@ -1,22 +1,29 @@
 ---
 layout: page
-title: Image Compare Features and Workflow
-heading: Image compare for screenshots, mockups, and visual review
+title: Image Compare Overview
+heading: Image Compare at diff.gujin.tech
 permalink: /diff/
-description: Use the image compare tool at diff.gujin.tech to compare screenshots locally, inspect visual differences, align images, and export what you see.
+description: A short root-site overview for Image Compare, with direct links to the live tool and the dedicated English and Chinese landing pages on diff.gujin.tech.
 kicker: Image Compare
 schema_type: SoftwareApplication
 ---
 
-<p><a class="button" href="https://diff.gujin.tech/">Open Image Compare</a> <a class="button secondary" href="{{ "/privacy/" | prepend: site.baseurl }}">Read privacy notes</a></p>
+<p><a class="button" href="https://diff.gujin.tech/">Open Image Compare</a> <a class="button secondary" href="https://diff.gujin.tech/image-compare-tool/">English Landing Page</a></p>
+<p><a class="button secondary" href="https://diff.gujin.tech/zh/image-compare/">中文落地页</a> <a class="button secondary" href="{{ "/privacy/" | prepend: site.baseurl }}">Read privacy notes</a></p>
 
-## What the tool is for
+## What this page is for
 
-This page supports the image compare workflow hosted at `diff.gujin.tech`.
+This is the root-site handoff page for the Image Compare workflow hosted at `diff.gujin.tech`.
 
-The runtime tool is meant for screenshot comparison, design review, and quick visual diff checks where you want a simple browser-based workflow instead of a heavier local setup.
+The tool itself lives on its own domain so the runtime can stay direct and lightweight. This page exists to connect the mother site with the live tool and its dedicated product landing pages.
 
-## What you can do
+## Current entry points
+
+- [Open the live tool](https://diff.gujin.tech/)
+- [Read the English landing page](https://diff.gujin.tech/image-compare-tool/)
+- [Read the Chinese landing page](https://diff.gujin.tech/zh/image-compare/)
+
+## What the tool currently offers
 
 - compare two images side by side
 - switch between overlay and diff views
@@ -24,29 +31,20 @@ The runtime tool is meant for screenshot comparison, design review, and quick vi
 - zoom and pan around the active comparison
 - export the current comparison view
 
-## Good fits
+## Why the runtime stays separate
 
-- comparing implementation screenshots against design references
-- checking visual regressions during product review
-- inspecting before and after image revisions
-- running a quick image compare session without sending files elsewhere
-
-## Why this page exists
-
-The tool itself lives on `diff.gujin.tech` because the short URL is easier to open and share.
-
-This root-domain page exists so search engines and human readers can understand what the tool does before opening it.
+The tool lives on `diff.gujin.tech` because the shorter domain is easier to open, share, and keep product-focused. The root domain stays smaller and acts as the mother site for support pages and future tools.
 
 ## FAQ
+
+### Does this page host the tool?
+
+No. This page is only the root-site overview. The live runtime is at `diff.gujin.tech`.
+
+### Where should I start?
+
+If you already know what you want, open the live tool directly. If you want search-oriented product copy, use the English or Chinese landing page on the diff domain.
 
 ### Does the image compare tool upload my files?
 
 The intended workflow is local-only processing in the browser. See the [privacy page]({{ "/privacy/" | prepend: site.baseurl }}) for the root-site explanation.
-
-### Is it free?
-
-Yes. The current public version is free to open and use.
-
-### What kind of images is it for?
-
-The main use cases are screenshots, UI captures, design handoff images, and similar visuals where comparing differences is more important than editing.

@@ -1,53 +1,53 @@
 ---
 layout: default
-title: Image Compare Tool for Screenshots
-description: Compare screenshots and images locally in your browser at diff.gujin.tech. Use overlay, diff view, manual alignment, and export without uploads.
+title: Small Web Tools by GuJin
+description: A lightweight mother site for GuJin tools, with direct access to Image Compare at diff.gujin.tech and room for more public workflows.
 body_class: home-page
 schema_type: WebSite
 ---
 
 <section class="hero">
   <div class="hero__copy">
-    <p class="kicker">Image compare</p>
-    <h1>Compare screenshots locally, without uploads.</h1>
-    <p class="lede">Use the image compare tool at <a href="https://diff.gujin.tech/">diff.gujin.tech</a> for screenshot comparison, visual change review, manual alignment, diff inspection, and export without uploads.</p>
+    <p class="kicker">GuJin tools</p>
+    <h1>A small mother site for current public tools.</h1>
+    <p class="lede">This root site keeps direct links, support pages, and tool overviews in one place. The current flagship workflow is <a href="https://diff.gujin.tech/">Image Compare at diff.gujin.tech</a>, with room for more public tools over time.</p>
     <div class="hero__actions">
       <a class="button" href="https://diff.gujin.tech/">Open Image Compare</a>
-      <a class="button secondary" href="{{ "/diff/" | prepend: site.baseurl }}">Read Features</a>
+      <a class="button secondary" href="{{ "/tools/" | prepend: site.baseurl }}">Browse Tools</a>
     </div>
     <ul class="hero__meta">
-      <li>Runs in the browser</li>
-      <li>Built for screenshots and visual review</li>
-      <li>Designed for local-only image handling</li>
+      <li>Tool directory and support pages</li>
+      <li>Direct links to live public workflows</li>
+      <li>Built to stay small and easy to navigate</li>
     </ul>
   </div>
   <aside class="hero__panel">
-    <p class="hero__panel-label">Best for</p>
+    <p class="hero__panel-label">Current focus</p>
     <ul class="bullet-list">
-      <li>design QA and implementation review</li>
-      <li>screenshot comparison before release</li>
-      <li>quick visual diff checks without setup</li>
+      <li>Image Compare for screenshots and visual review</li>
+      <li>privacy and support information for hosted tools</li>
+      <li>a clean structure for future public tools</li>
     </ul>
   </aside>
 </section>
 
 <section class="section">
   <div class="section__heading">
-    <p class="kicker">Why people use it</p>
-    <h2>One focused tool, one clear job.</h2>
+    <p class="kicker">Role</p>
+    <h2>One root site, one clear job.</h2>
   </div>
   <div class="card-grid">
     <article class="info-card">
-      <h3>Compare two images fast</h3>
-      <p>Open the tool and start comparing screenshots, mockups, or other visual assets without creating an account or wiring up local software.</p>
+      <h3>Find the current live tools</h3>
+      <p>Use the directory pages here to find the latest public workflows without guessing which domain or URL is current.</p>
     </article>
     <article class="info-card">
-      <h3>Inspect visual changes clearly</h3>
-      <p>Switch between overlay and diff modes, zoom in on trouble spots, and adjust alignment when screenshots do not line up cleanly.</p>
+      <h3>Read the support pages fast</h3>
+      <p>Privacy notes, overview pages, and compatibility links stay on the root site so the runtime tools can stay focused.</p>
     </article>
     <article class="info-card">
-      <h3>Keep your files on your device</h3>
-      <p>The site is positioned around local processing, which makes it useful for quick internal review and privacy-sensitive image checks.</p>
+      <h3>Leave room for more tools</h3>
+      <p>The site structure is intentionally small, but it is designed to grow into a clear directory for multiple public tools.</p>
     </article>
   </div>
 </section>
@@ -55,41 +55,28 @@ schema_type: WebSite
 <section class="section">
   <div class="section__heading">
     <p class="kicker">Explore</p>
-    <h2>Start with the pages that matter.</h2>
+    <h2>Start with the current public entry points.</h2>
   </div>
   <div class="link-grid">
+    <a class="link-card" href="https://diff.gujin.tech/">
+      <span class="link-card__title">Open Image Compare</span>
+      <span class="link-card__copy">Go straight to the live runtime tool for local screenshot and image comparison.</span>
+    </a>
     <a class="link-card" href="{{ "/diff/" | prepend: site.baseurl }}">
-      <span class="link-card__title">Image Compare</span>
-      <span class="link-card__copy">Feature overview, use cases, and a direct path to the runtime tool.</span>
+      <span class="link-card__title">Image Compare Overview</span>
+      <span class="link-card__copy">Read the root-site handoff page and jump into the English or Chinese product landing pages.</span>
     </a>
     <a class="link-card" href="{{ "/tools/" | prepend: site.baseurl }}">
       <span class="link-card__title">Tools</span>
-      <span class="link-card__copy">A compact directory of current public tools.</span>
+      <span class="link-card__copy">See the current public tool directory and where each workflow lives.</span>
     </a>
     <a class="link-card" href="{{ "/privacy/" | prepend: site.baseurl }}">
       <span class="link-card__title">Privacy</span>
-      <span class="link-card__copy">What the root site hosts and how the image compare workflow is intended to behave.</span>
+      <span class="link-card__copy">Understand what the root site hosts and how the hosted tool workflows are expected to behave.</span>
     </a>
     <a class="link-card" href="{{ "/about/" | prepend: site.baseurl }}">
       <span class="link-card__title">About</span>
-      <span class="link-card__copy">Why this site exists and why it is intentionally small.</span>
+      <span class="link-card__copy">Why this mother site exists and why it stays intentionally small.</span>
     </a>
   </div>
-</section>
-
-<section class="section section--notes">
-  <div class="section__heading">
-    <p class="kicker">Archive</p>
-    <h2>Older notes stay available, but secondary.</h2>
-  </div>
-  <div class="note-list">
-    {% for post in site.posts limit:2 %}
-      <article class="note-card">
-        <p class="note-card__date">{{ post.date | date: "%B %-d, %Y" }}</p>
-        <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-      </article>
-    {% endfor %}
-  </div>
-  <p class="section__footnote"><a href="{{ "/notes/" | prepend: site.baseurl }}">Browse all notes</a></p>
 </section>

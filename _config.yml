@@ -1,7 +1,6 @@
 # Build settings
 plugins:
   - jemoji
-  - jekyll-paginate
   - jekyll-sitemap
 
 exclude:
@@ -10,8 +9,8 @@ exclude:
 # Site settings
 title: "GuJin"
 description: >
-   Small web tools and practical notes by GuJin, including a browser-based
-   image compare workflow for screenshots and visual review.
+   Small web tools by GuJin, with a lightweight mother site for current public
+   workflows and support pages.
 
 email: gujin@gujin.tech
 #blog logo
@@ -25,8 +24,6 @@ name: 'Gu Jin'
 author: 'Gu Jin'
 author_image: "/assets/images/logo.jpg"
 lang: "en"
-
-paginate:	5
 
 url: "https://gujin.tech" # the base hostname & protocol for your site
 baseurl: ""
