@@ -1,27 +1,29 @@
 ---
 layout: page
 title: About
-heading: About this site
+heading: About GuJin
 permalink: /about/
-description: GuJin builds small web tools and keeps a lightweight mother site for current public workflows.
+description: GuJin builds focused web tools. This site is the official home for current tools, product pages, and support information.
 kicker: About
 ---
 
-GuJin is a small maker site for practical software tools.
+GuJin builds focused web tools for practical tasks.
 
-The current focus is not a large product suite. It is a compact set of public pages that make current workflows easy to find and easy to trust.
+This site is the official home for current tools, product pages, and support information from GuJin.
 
-This root domain does three things:
+Image Compare is the current main public tool and runs at `diff.gujin.tech`.
 
-- explain what the current tools are
-- keep support pages like privacy and tool overviews in one place
-- give runtime tools like `diff.gujin.tech` a clean discovery layer
+This site does three things:
 
-If the site grows, it will still stay in that shape: small, focused, and useful before it tries to be broad.
+- show the current tools from GuJin
+- keep product pages such as tool overviews in one place
+- keep support pages such as privacy information easy to find
+
+Use `gujin.tech` when you want the official directory, an overview page, or support information for the current tools.
 
 Useful links:
 
-- [Open the image compare tool](https://diff.gujin.tech/)
+- [Open Image Compare](https://diff.gujin.tech/)
 - [Browse tools]({{ "/tools/" | prepend: site.baseurl }})
 - [Read the Image Compare overview]({{ "/diff/" | prepend: site.baseurl }})
 - [GitHub profile](https://github.com/GuJin)

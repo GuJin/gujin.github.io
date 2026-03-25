@@ -1,24 +1,24 @@
 ---
 layout: page
 title: Privacy
-heading: Privacy notes for the root site and image compare tool
+heading: Privacy for GuJin tools
 permalink: /privacy/
-description: Privacy notes for gujin.tech as a static mother site and for the current Image Compare workflow hosted at diff.gujin.tech.
+description: Privacy information for gujin.tech and the Image Compare tool at diff.gujin.tech.
 kicker: Privacy
 ---
 
-`gujin.tech` is a static site used for lightweight support pages, tool overviews, and links to current public workflows.
+This page explains the current privacy expectations for `gujin.tech` and the `Image Compare` tool at `diff.gujin.tech`.
 
-## Root site
+## gujin.tech
 
-The root site is meant to serve normal static pages such as the homepage, tools page, about page, privacy page, and product overview pages. It does not require an account to read.
+`gujin.tech` hosts static pages such as the homepage, tools directory, product overviews, about page, and privacy page. You do not need an account to read these pages.
 
-## Image compare workflow
+## Image Compare at diff.gujin.tech
 
-The image compare tool at `diff.gujin.tech` is positioned as the current flagship public workflow for screenshots and visual review.
+`Image Compare` is designed for local, in-browser comparison of screenshots and other images.
 
-The intended behavior is local-only image handling so your screenshots and reference files stay on your device rather than being uploaded to a site-managed backend.
+The intended workflow is that your screenshots and reference files stay on your device rather than being uploaded to a GuJin-managed backend.
 
 ## Third-party infrastructure
 
-Like most static sites, the pages may be served through hosting, DNS, and CDN infrastructure. If a later version adds anything that materially changes privacy expectations for either the root site or a linked public tool, this page should change with it.
+Like most websites, these pages may be served through hosting, DNS, and CDN infrastructure. If a later version materially changes privacy expectations for `gujin.tech` or a linked tool, this page should be updated.

@@ -9,8 +9,8 @@ exclude:
 # Site settings
 title: "GuJin"
 description: >
-   Small web tools by GuJin, with a lightweight mother site for current public
-   workflows and support pages.
+   Official site for GuJin tools, with Image Compare at diff.gujin.tech plus
+   product and support pages.
 
 email: gujin@gujin.tech
 #blog logo

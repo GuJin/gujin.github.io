@@ -1,22 +1,22 @@
 ---
 layout: page
 title: Tools
-heading: Current public tools by GuJin
+heading: Current tools by GuJin
 permalink: /tools/
-description: A compact directory of current public tools by GuJin, with Image Compare as the current flagship workflow.
+description: Official directory for current GuJin tools, led by Image Compare at diff.gujin.tech.
 kicker: Tools
 ---
 
 <div class="tool-list">
   <article class="tool-card">
     <div>
-      <p class="tool-card__label">Current tool</p>
+      <p class="tool-card__label">Current main tool</p>
       <h2>Image Compare</h2>
-      <p>Compare screenshots and images locally in your browser. This is the current flagship workflow, and it lives at <code>diff.gujin.tech</code>.</p>
+      <p>Compare screenshots and images locally in your browser. Image Compare runs at <code>diff.gujin.tech</code> and is the current main public tool from GuJin.</p>
       <ul class="bullet-list">
         <li>best for screenshots, mockups, and visual QA</li>
-        <li>meant for direct use at diff.gujin.tech</li>
-        <li>supported here with overview and privacy pages</li>
+        <li>open it directly at diff.gujin.tech</li>
+        <li>find overview and privacy pages here</li>
       </ul>
     </div>
     <div class="tool-card__actions">
@@ -26,4 +26,4 @@ kicker: Tools
   </article>
 </div>
 
-This page is intended to stay small. As more public tools are shipped, they should appear here without turning the root site into a content archive.
+Use this page to find current GuJin tools and their official pages. When more tools are available, they will appear here.
